@@ -1,4 +1,4 @@
-import styles from "./layoutStyles/subPagesLayout.module.css";
+import styles from "../layoutStyles/subPagesLayout.module.css";
 import Image from "next/image"
 
 export default function subPagesLayout({ menu, title, content }) {

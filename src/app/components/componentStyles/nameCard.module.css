@@ -1,0 +1,40 @@
+.card {
+  width: 95%;
+  height: 100%;
+  background-color: #0b539b;
+  border-radius: 9px;
+  box-shadow: -3px 4px 7px #00000032;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  
+}
+
+.imgCard {
+  width: 150px;
+  height: 90%;
+  background-color: rgb(255, 255, 255);
+  margin-left: 20px;
+  border-radius: 5px;
+  
+}
+
+.profile {
+  width: 65%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; /* allows items to wrap onto multiple lines as needed */
+  overflow-y: hidden; /* hides overflow along the y-axis */
+  
+}
+
+.profile h1 {
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+  flex: 1 1 auto; /* allows the item to grow and shrink with the container */
+  min-width: 0; /* prevents the flex item from being larger than the container */
+  white-space: nowrap; /* keeps the content on a single line */
+  font-size: 1rem;
+}

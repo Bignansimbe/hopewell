@@ -26,7 +26,7 @@ export default function Opd() {
         backgoundImage="./public/assets/sethoscope.jpg"
         recent="Recent bookings"
         head="OPD"
-        link="./registerpatient"
+        link="./records"
         tableData={<Table />}
         menuList={
           <>
