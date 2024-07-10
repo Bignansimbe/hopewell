@@ -1,0 +1,244 @@
+.homepage {
+    background-image: url('../../../../public/assets/loginBackgound.jpg');
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+
+    
+}
+
+.bg_overlay {
+    background-color: rgba(115, 195, 241, 0.31);
+    height: 100%;
+    width: 100%;
+   
+    
+}
+
+.terms {
+    height: 70px;
+    width: auto;
+    position: absolute;
+    left: 90px;
+    top: 40px;
+
+}
+
+.description {
+    height: 70px;
+    width: auto;
+    position: absolute;
+    top: 40px;
+    right: 64px;
+    display: flex;
+    gap: 3px;
+
+}
+
+.logo {
+    position: absolute;
+    top: 149px;
+    left: 77px;
+    width: 511px;
+    height: 261px;
+    transform: scale(1.5);
+}
+
+.logo img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+
+.login {
+    position: absolute;
+    width: 505px;
+    height: 398px;
+    background-color: rgb(255, 255, 255, 0.28);
+    right: 126px;
+    top: 150px;
+    border-radius: 9px;
+    border: 1px solid   linear-gradient(90deg, rgba(110, 110, 110, 0), rgba(0, 0, 0, 0.619));
+    box-shadow: 0px 4px 4px 0px #00000080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm {
+    width: 323px;
+    height: 270px;
+    
+
+
+
+}
+
+.loginForm h1 {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.loginForm p {
+    font-size: 0.7rem;
+}
+
+.loginForm input {
+    border: none;
+}
+
+/* Mobile styles */
+@media (max-width: 800px) {
+    /* Your mobile-specific styles here */
+
+    .homepage {
+        background-size: cover;
+    }
+
+    .bg_overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        
+    }
+
+    .terms {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: 0.5rem;
+        top: 10px;
+        left: 20px;
+
+
+    }
+
+    .description {
+        
+        position: absolute;
+        width: 30%;
+        height: auto;
+        top: 10px;
+        right: 10px;
+        font-size: 0.5rem;
+    }
+
+    .logo {
+        width: 50%;
+        position: absolute;
+        top: 7%;
+        right: 25%;
+        left: 25%;
+
+    }
+
+
+    .login {
+        width: 80%;
+        height: 40%;
+        position: absolute;
+        top: 40%;
+        left: 10%;
+        right: 10%;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* Your tablet-specific styles here */
+    
+    .homepage {
+        background-size: cover;
+    }
+
+    .bg_overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        
+    }
+
+    .terms {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: 0.5rem;
+        top: 10px;
+        left: 20px;
+
+
+    }
+
+    .description {
+        
+        position: absolute;
+        width: 30%;
+        height: auto;
+        top: 10px;
+        right: 10px;
+        font-size: 0.5rem;
+    }
+
+    .logo {
+        width: 50%;
+        position: absolute;
+        top: 7%;
+        right: 25%;
+        left: 25%;
+
+    }
+
+
+    .login {
+        width: 80%;
+        height: 40%;
+        position: absolute;
+        top: 40%;
+        left: 10%;
+        right: 10%;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+    /* Your desktop-specific styles here */
+    .homepage {
+        background-size: cover;
+        
+    }
+}
+
+
+.username, .password {
+    border-radius: 30px;
+    width: 320px;
+    height: 44px;
+    padding-left: 6%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 4%;
+    
+}
+.submit {
+    width: 94px;
+    height: 35px;
+    background-color: #3E8EDE;
+    border-radius: 30px;
+    color: white;
+}
+
+
+ 
