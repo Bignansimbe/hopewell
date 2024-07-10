@@ -1,0 +1,50 @@
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .picture {
+    width: 20%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .link a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .title {
+    width: 70%;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: bolder;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: #0bab4b;
+    padding-left: 5%;
+  }
+  
+  .bgImage {
+    width: 30%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  
