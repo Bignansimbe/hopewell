@@ -1,0 +1,42 @@
+.main {
+    background-image: url("/assets/sethoscope.jpg");
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+
+  .overlay {
+    background-color: rgba(115, 195, 241, 0.6);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .logo {
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ .login {
+    width: 300px;
+    height: 70px;
+    background-color: #0BAB4B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 10px ;
+
+ }
