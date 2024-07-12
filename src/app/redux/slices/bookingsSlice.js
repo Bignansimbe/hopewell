@@ -15,7 +15,7 @@ export const fetchBookingsData = createAsyncThunk(
   "api/fetchBookingsData",
   async () => {
     return axios
-      .get("http://localhost:3000/bookings/recentBookings")
+      .get("https://hms-backend-gold.vercel.app/bookings/recentBookings")
       .then((response) => response.data);
   }
 );

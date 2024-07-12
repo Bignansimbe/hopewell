@@ -13,7 +13,7 @@ const initialState = {
 // Create an async thunk for fetching data
 export const fetchData = createAsyncThunk('api/fetchData', async () => {
   return axios
-       .get('http://localhost:3000/vitals')
+       .get('https://hms-backend-gold.vercel.app/vitals')
        .then((response) => response.data)
   
 });

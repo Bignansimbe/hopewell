@@ -16,7 +16,7 @@ export const fetchPatientsData = createAsyncThunk(
   "api/fetchPatientsData",
   async () => {
     return axios
-      .get("http://localhost:3000/patients")
+      .get("https://hms-backend-gold.vercel.app/patients")
       .then((response) => response.data);
   }
 );
