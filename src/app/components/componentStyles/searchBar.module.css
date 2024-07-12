@@ -21,6 +21,9 @@
     border: none;
 }
 
+.card input:focus {
+    outline: none;
+}
   
 
 .inputCard {

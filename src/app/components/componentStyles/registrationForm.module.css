@@ -1,0 +1,58 @@
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+   /* background-color: aquamarine; */
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    border-radius: 15px;
+    
+}
+
+.inputs {
+    width: 50%;
+    height: 5%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+}
+
+.inputs:focus {
+    outline: none;
+
+}
+
+.main button {
+    background-color: rgb(14, 161, 14);
+    color: white;
+    height: 5%;
+    width: 30%;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.main button:hover {
+    background-color: rgb(15, 116, 15);
+
+}
+
+.main button:active {
+    background-color: rgb(10, 70, 10);
+    
+}
+
+.insurance {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    font-weight: bold;
+    color:rgb(7, 57, 107)
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px
+}
