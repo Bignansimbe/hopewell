@@ -2,10 +2,15 @@
 // PatientForm.js
 import styles from "./componentStyles/registrationForm.module.css";
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // Import the CSS
-import generateId from '../functions/id'
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS 
+import { postPatientData } from "../redux/slices/patientSlice";
+
+
+
+
 
 const PatientForm = () => {
   const [formData, setFormData] = useState({
@@ -23,66 +28,45 @@ const PatientForm = () => {
     // Add other properties here...
   });
 
+  const dispatch = useDispatch();
+  const patientData  = useSelector((state)=>state.patients.patientList)
+ 
+  
+
   
   
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Generate Id for Patients
-    const patientIdGenerated = generateId('PI')
-    console.log("form data", formData);
-    console.log('gen_id', patientIdGenerated)
-
-    try {
-      // Transform the data
-      const transformedData = {
-        patientId: patientIdGenerated,
-        firstName: formData.first_name,
-        lastName: formData.last_name,
-        dob: formData.dob,
-        age: parseInt(formData.age),
-        gender: formData.gender,
-        residence: formData.residence.toLowerCase(),
-        telephone: formData.telephone,
-        emergencyContact: formData.emergency_contact,
-        healthInsurance: formData.health_insurance,
-        maritalStatus: formData.marital_status,
-      };
-
-      console.log("transformd data", transformedData);
-      // Send the data to your Express app
-      await axios.post(
-        "http://localhost:3000/patients/insertRecord",
-        transformedData
-      );
-      console.log("Patient data sent successfully!");
-      toast.success("Patient data submitted successfully!", {
-        position: "top-right",
-        autoClose: 3000, // Close after 3 seconds
-        hideProgressBar: true,
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(postPatientData(formData))
+      .then((response) => {
+        if (response.meta.requestStatus === 'fulfilled') {
+          toast.success('Patient data submitted successfully!', {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: true,
+          });
+          // Reset form data
+          setFormData({
+            first_name: '',
+            last_name: '',
+            dob: '',
+            age: 0,
+            gender: '',
+            residence: '',
+            telephone: '',
+            emergency_contact: '',
+            health_insurance: false,
+            marital_status: '',
+          });
+        } else {
+          toast.error('Error submitting patient data. Please try again.', {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: true,
+          });
+        }
       });
-      // clears form data
-      setFormData({
-        first_name: "",
-        last_name: "",
-        dob: "",
-        age: 0,
-        gender: "",
-        residence: "",
-        telephone: "",
-        emergency_contact: "",
-        health_insurance: false,
-        marital_status: "",
-        // Add other properties here...
-      });
-    } catch (error) {
-      console.error("Error sending patient data:", error);
-      toast.error("Error submitting patient data. Please try again later.", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: true,
-      });
-    }
   };
 
   const handleChange = (e) => {

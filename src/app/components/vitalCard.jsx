@@ -4,10 +4,15 @@ import { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import the CSS
+import {  postVitals } from '../redux/slices/vitalSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import timeStamp from "../functions/timestamp";
+import generateId from "../functions/id";
+
 
 
 // TIMESTAMP
-const currentDate = new Date();
+/*const currentDate = new Date();
 const formattedDate = currentDate.toLocaleString("en-GB", {
   year: "numeric",
   month: "2-digit",
@@ -15,11 +20,15 @@ const formattedDate = currentDate.toLocaleString("en-GB", {
   hour: "2-digit",
   minute: "2-digit",
   second: "2-digit",
-});
+});*/
+
+const formattedDate = timeStamp()
+const generateVitalId = generateId('V')
 
 export default function VitalCard() {
   const [formData, setFormData] = useState({
-    patientId: 1,
+    vitalId: generateVitalId,
+    patientId:'HMPID2027',
     dateAndTime: formattedDate,
     weight: 0,
     temperature: 0,
@@ -29,9 +38,9 @@ export default function VitalCard() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
- // const [sumbittedMessage, setsumbittedMessage] = useState("");
- // const [failedMessage, setFailedMessage] = useState("");
   const [formKey, setFormKey] = useState(Date.now());
+  const dispatch = useDispatch()
+  const vitalPost = useSelector((state)=> state.vitals)
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -41,30 +50,18 @@ export default function VitalCard() {
     }));
   };
 
-  //
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    //setIsSubmitting(true); // clears input field
-    //setsumbittedMessage(""); //clears notification
-    //setFailedMessage("");
-    //API REQUEST
-    axios({
-      method: "post",
-      url: "http://localhost:3000/vitals/insertVitals",
-      data: formData,
-      headers: { "Content-Type": "application/json" },
-    })
+    dispatch(postVitals(formData))
       .then((response) => {
-        console.log(response.data);
-        //setIsSubmitting(false);
-        toast.success("Patient vitals submitted successfully!", {
-          position: "top-right",
-          autoClose: 3000, // Close after 3 seconds
-          hideProgressBar: true,
-        });
-
-        setFormData(
-          {
+        if (response.meta.requestStatus === 'fulfilled') {
+          toast.success("Patient vitals submitted successfully!", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+          });
+          setFormData({
             patientId: 0,
             dateAndTime: "",
             weight: 0,
@@ -72,19 +69,14 @@ export default function VitalCard() {
             bloodPressure: "",
             heartRate: "",
             glucoseLevel: "",
-          }
-        )
-       
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        //setIsSubmitting(false);
-        toast.error("Error submitting patient vitals. Please try again .", {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: true,
-        });
-       
+          });
+        } else {
+          toast.error("Error submitting patient vitals. Please try again.", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+          });
+        }
       });
   };
 
