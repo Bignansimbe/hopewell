@@ -1,7 +1,7 @@
 import styles from "../layoutStyles/subPagesLayout.module.css";
 import Image from "next/image"
 
-export default function subPagesLayout({ menu, title, content }) {
+export default function subPagesLayout({ menu, title, children }) {
   return (
     <div className={styles.main}>
       <div className={styles.leftMenuBar}>
@@ -26,7 +26,7 @@ export default function subPagesLayout({ menu, title, content }) {
       </div>
 
       <div className={styles.display}>
-        <div className={styles.content}>{content}</div>
+        <div className={styles.content}>{children}</div>
       </div>
     </div>
   );

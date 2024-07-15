@@ -14,13 +14,7 @@ export default function Table() {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
 
-  const openModal = () => {
-      setShowModal(true);
-  };
 
-  const closeModal = () => {
-      setShowModal(false);
-  };
 
   useEffect(() => {
     dispatch(fetchBookingsData());
@@ -39,7 +33,7 @@ export default function Table() {
       </thead>
       <tbody>
         {bookings.bookingsList.map((booking) => (
-          <Link className={styles.link} href="/modal" as="/modal" key={booking.bookings_id}>
+          <Link className={styles.link} href="/modal" key={booking.bookings_id}>
             <tr className={styles.clickableRow}>
               <td>{booking.patient_id}</td>
               <td>
@@ -49,7 +43,7 @@ export default function Table() {
             </tr>
           </Link>
         ))}
-         {showModal && <Modal onClose={closeModal} />}
+         
       </tbody>
     </table>
   );
