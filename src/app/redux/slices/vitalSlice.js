@@ -22,7 +22,7 @@ export const fetchVitalsById = createAsyncThunk(
   "vitals/fetchVitalsById",
   async (patientId) => {
     return axios
-      .get(`http://localhost:3000/vitals/patientVital/${patientId}`)
+      .get(`https://hms-backend-gold.vercel.app/vitals/patientVital/${patientId}`)
       .then((response) => response.data);
   }
 );
