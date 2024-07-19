@@ -33,6 +33,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 3%;
 }
 
 .button_div button {
@@ -42,6 +43,7 @@
   border-radius: 10px;
   font-size: 1rem;
   color: rgb(255, 255, 255);
+
 }
 
 .submit_req_btn {

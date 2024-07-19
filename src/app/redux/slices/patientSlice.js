@@ -87,6 +87,8 @@ const patientsSlice = createSlice({
         }));
       }
     },
+
+    
   },
   
   extraReducers: (builder) => {
