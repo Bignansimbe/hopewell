@@ -6,10 +6,8 @@ import { fetchPatientsData } from "../redux/slices/patientSlice";
 import { fetchVitals } from "../redux/slices/vitalSlice";
 import calculateAge from "../functions/age";
 
-
-
 export default function PatientDetailsCard({ patientId }) {
-  console.log(patientId)
+  console.log(patientId);
   const dispatch = useDispatch();
   const patientInfo = useSelector((state) => state.patients.patientsList);
   const vitalsList = useSelector((state) => state.vitals.vitalsList);
@@ -31,24 +29,24 @@ export default function PatientDetailsCard({ patientId }) {
       setLoading(false);
     }
   }, [dispatch, patientInfo.length]);
-  console.log(patientInfo)
-  console.log(typeof(patientInfo))
+  console.log(patientInfo);
+  console.log(typeof patientInfo);
 
   // Set the selected patient based on patientId prop
   useEffect(() => {
     if (patientInfo.length > 0) {
-      const selectedPatient = patientInfo.find((p) => p.patient_id === patientId);
+      const selectedPatient = patientInfo.find(
+        (p) => p.patient_id === patientId
+      );
       setPatient(selectedPatient);
-      console.log(patient)
-      
+      console.log(patient);
     }
   }, [patientInfo, patientId]);
-  
 
   // Fetch vitals data if not already fetched
   useEffect(() => {
-    console.log(vitalsList)
-     
+    console.log(vitalsList);
+
     if (vitalsList.length === 0) {
       dispatch(fetchVitals())
         .then(() => setLoading(false))
@@ -60,7 +58,7 @@ export default function PatientDetailsCard({ patientId }) {
       setLoading(false);
     }
 
-    console.log(vitalsList)
+    console.log(vitalsList);
   }, [dispatch, vitalsList.length]);
 
   // Set the selected vitals based on patientId prop
@@ -68,7 +66,7 @@ export default function PatientDetailsCard({ patientId }) {
     if (vitalsList.length > 0) {
       const selectedVitals = vitalsList.find((v) => v.patient_id === patientId);
       setVitals(selectedVitals);
-      console.log(vitals)
+      console.log(vitals);
     }
   }, [vitalsList, patientId]);
 
@@ -85,29 +83,78 @@ export default function PatientDetailsCard({ patientId }) {
   return (
     <main className={styles.main}>
       <div className={styles.leftdiv}>
-        <fieldset className={styles.patientDetails}>
-          <legend className={styles.pd_legend}>Patient Information</legend>
-          <div className={styles.details}>
-            <p>Patient ID: {patient ? patient.patient_id : "Not available"}</p>
-            <p>Patient Name: {patient ? `${patient.first_name} ${patient.last_name}` : "Not available"}</p>
-            <p>Patient Age: {patient ? calculateAge(patient.dob) : "Not available"}</p>
-            <p>Gender: {patient ? patient.gender : "Not available"}</p>
-            <p>Residence: {patient ? patient.residence : "Not available"}</p>
-          </div>
-        </fieldset>
+        <div className={styles.patientDetailsBox}>
+          <fieldset className={styles.patientDetails}>
+            <legend className={styles.pd_legend}>Patient Information</legend>
+            <div className={styles.details}>
+              <p>
+                Patient ID:{" "}
+                <p className={styles.info}>
+                  {patient ? patient.patient_id : ""}
+                </p>
+              </p>
+              <p>
+                Patient Name:{" "}
+                <p className={styles.info}>
+                  {" "}
+                  {patient ? `${patient.first_name} ${patient.last_name}` : ""}
+                </p>
+              </p>
+              <p>
+                Patient Age:{" "}
+                <p className={styles.info}>
+                  {" "}
+                  {patient ? calculateAge(patient.dob) : ""}
+                </p>
+              </p>
+              <p>
+                Gender:{" "}
+                <p className={styles.info}>{patient ? patient.gender : ""}</p>
+              </p>
+              <p>
+                Residence:{" "}
+                <p className={styles.info}>
+                  {patient ? patient.residence : ""}
+                </p>
+              </p>
+            </div>
+          </fieldset>
+        </div>
 
-        <fieldset className={styles.vitals}>
-          <legend className={styles.pd_legend}>Vitals</legend>
-          <div className={styles.details}>
-            <p>Weight: {vitals ? vitals.weight : "Not available"}</p>
-            <p>Temperature: {vitals ? vitals.temperature : "Not available"}</p>
-            <p>Heart Rate: {vitals ? vitals.heart_rate : "Not available"}</p>
-            <p>Blood Pressure: {vitals ? vitals.blood_pressure : "Not available"}</p>
-            <p>Glucose level: {vitals ? vitals.glucose_level : "Not available"}</p>
-          </div>
-        </fieldset>
+        <div className={styles.vitalsBox}>
+          <fieldset className={styles.vitals}>
+            <legend className={styles.pd_legend}>Vitals</legend>
+            <div className={styles.details}>
+              <p>
+                Weight:{" "}
+                <p className={styles.info}>{vitals ? vitals.weight : ""} </p>
+              </p>
+              <p>
+                Temperature:{" "}
+                <p className={styles.info}>
+                  {vitals ? vitals.temperature : ""}
+                </p>
+              </p>
+              <p>
+                Heart Rate: <p className={styles.info}>{vitals ? vitals.heart_rate : ""}</p>
+              </p>
+              <p>
+                Blood Pressure:{" "}
+                <p className={styles.info}>
+                  {" "}
+                  {vitals ? vitals.blood_pressure : ""}
+                </p>
+              </p>
+              <p>
+                Glucose level:{" "}
+                <p className={styles.info}>
+                  {vitals ? vitals.glucose_level : ""}
+                </p>
+              </p>
+            </div>
+          </fieldset>
+        </div>
       </div>
     </main>
   );
 }
-     

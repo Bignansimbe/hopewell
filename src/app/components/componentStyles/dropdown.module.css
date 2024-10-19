@@ -1,0 +1,44 @@
+/* dropdown.module.css */
+.dropdown {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2%;
+  }
+  
+.dropdown:hover{
+    background-color: rgba(238, 238, 238, 0.804);
+    border-radius: 5px;
+}
+
+  .select {
+    width: 100%;
+    height: 80%;
+    padding: 5px;
+    font-size: 1rem;
+    border: none;
+    
+  }
+
+  .select:focus {
+    outline: none;
+  }
+
+  .select:hover {
+    background-color: rgba(238, 238, 238, 0.804);
+    border-radius: 5px;
+  }
+
+  .select:active {
+    background-color: rgba(222, 222, 222, 0.804);
+    border-radius: 5px;
+  }
+  
+  .dropdown:active {
+    background-color: rgba(222, 222, 222, 0.804);
+    border-radius: 5px;
+  }
+  
+  

@@ -8,6 +8,8 @@ import PatientDetailsCard from "@/app/components/patientDetailscard";
 import SearchInput from "@/app/components/searchInput";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import Dropdown from "@/app/components/labResultsDrop";
+import SwitchBox from "@/app/components/switchBox";
 
 
 
@@ -28,6 +30,7 @@ export default function Recordpage() {
         <SubPagesLayout
           menu={<div className={styles.awaitin_consult_div}>
             <WaitingList/>
+            <Dropdown/>
           </div>}
 
           title='hello'
@@ -40,7 +43,17 @@ export default function Recordpage() {
           <div className={styles.body}>
             <div className={styles.left}>
               
-              <PatientDetailsCard patientId={submittedValue} />
+              <SwitchBox
+              firstDiv={
+                <PatientDetailsCard patientId={submittedValue} />
+              }
+              firstDivButtonName='Check previous record'
+              secondDiv={
+                <h1>PREVIOUS RECORD</h1>
+              }
+
+              secondDivButtonName='View Patient Details'
+              />
               
             </div>
             <div className={styles.right}>

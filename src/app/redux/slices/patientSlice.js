@@ -19,6 +19,7 @@ export const fetchPatientsData = createAsyncThunk(
     return axios
       .get("https://hms-backend-gold.vercel.app/patients")
       .then((response) => response.data);
+      
   }
 );
 

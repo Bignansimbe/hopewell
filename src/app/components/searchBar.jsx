@@ -71,7 +71,7 @@ const SearchComponent = (props) => {
             ))}
           </ul>
         ) : (
-          <p>No results found.</p>
+          <p></p>
         )}
       </div>
     </div>

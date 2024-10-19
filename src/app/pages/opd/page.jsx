@@ -9,6 +9,7 @@ import Providers from "@/app/redux/provider";
 import { fetchPatientsData } from "../../redux/slices/patientSlice";
 import Table from "../../components/table";
 import SearchComponent from "../../components/searchBar";
+import BookingsForm from "@/app/components/bookings";
 
 export default function Opd() {
   const patients = useSelector((state) => state.patients);
@@ -32,6 +33,9 @@ export default function Opd() {
           <>
             <li className={styles.searchBox}>
               <SearchComponent placeholder="Search..." />
+            </li>
+            <li>
+            <BookingsForm/>
             </li>
           </>
         }

@@ -1,6 +1,6 @@
 .card {
     width: 100%;
-    height: 300%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,6 +9,7 @@
     border-radius: 19px;
     border: 2px solid #dfdfdf6d;
     overflow: hidden;
+    
 }
 
 .card input {
@@ -34,7 +35,7 @@
     justify-content: center;
     align-items: center;
     gap: 0.5%;
-    background-color: rgb(246, 246, 246);
+    
 }
 
 
@@ -44,13 +45,30 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
     gap: 0.5%;
     color: #245484;
     overflow-y: scroll;
-    font-size: 90%;
-
+    font-size: 0.8rem;
     
+    
+    
+}
+
+.displaySearch ul {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.displaySearch ul li {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+
+    gap: none;
 }
 
 

@@ -294,17 +294,17 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  gap: 10px;
+  
+  
+  
 }
 
-.menuList li a {
+.menuList li {
   display: flex;
-  height: 100%;
-  width: 100%;
-  gap: 4%;
-  border-radius: 9px;
-  padding: 9px;
-}
+  flex-direction: column;
+  height: 50%;
+  
+ }
 
 .menuList li a h1 {
   display: flex;

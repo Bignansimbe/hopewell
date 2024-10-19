@@ -3,8 +3,7 @@
     width: 100%;
 }
 .leftdiv {
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
+    
     width: 100%;
     height: 100%;
     display: flex;
@@ -24,19 +23,29 @@
     padding-bottom: 7%;
     
   }
+  .patientDetailsBox {
+    width: 100%;
+    height: 40%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .patientDetails {
     width: 96%;
-    height: 30%;
-    border-radius: 10px;
-    border: 2px solid rgba(203, 203, 203, 0.659);
+    height: 90%;
+    border-radius: 5px;
+    border: 2px solid #9bc7eb;
     margin-top: 2%;
+    
     
   }
 
   .pd_legend {
      margin-left: 5%;
-     color: rgba(133, 133, 133, 0.771);
+     color: #0e70c1;
+     font-weight: bolder;
   }
 
   .right_legend {
@@ -54,14 +63,44 @@
   }
 
   .details p, .patientDetails p {
-    color: rgb(115, 115, 115);
+    
+    display: flex;
+  }
+
+  .patientDetails p {
+    
+  }
+
+  .details p {
+    display: flex;
+  }
+
+  .info {
+    color: #1264d8;
+    margin-left: 5%;
+    font-weight: bold;
+    border-bottom: 2px solid #9bc7eb;
+    width: 50%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .vitalsBox {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
   }
 
   .vitals {
     width: 96%;
-    height: 30%;
-    border-radius: 10px;
-    border: 2px solid rgba(203, 203, 203, 0.659);
+    height: 90%;
+    border-radius: 5px;
+    border: 2px solid #9bc7eb;
     margin-top: 2%;
   }
 
