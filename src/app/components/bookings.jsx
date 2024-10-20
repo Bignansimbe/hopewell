@@ -85,8 +85,8 @@ export default function BookingsForm() {
             onChange={handleChange} // Input change handler
           />
         </div>
-        <div className={styles.inputContainer} id={styles.healthInsurance}>
-          <label htmlFor="healthInsurance">healthInsurance:</label>
+        <div className={styles.inputContainer} id={styles.nhis}>
+          <label htmlFor="healthInsurance">NHIS:</label>
           <input
             className={styles.checkbox}
             type="checkbox"

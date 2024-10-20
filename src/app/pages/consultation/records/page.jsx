@@ -33,7 +33,7 @@ export default function Recordpage() {
             <Dropdown/>
           </div>}
 
-          title='hello'
+          title='Consltation'
           titleBarContent={
             <SearchInput 
             onSubmit={handleFormSubmit}

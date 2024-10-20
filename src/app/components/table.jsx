@@ -1,26 +1,23 @@
-import styles from "./componentStyles/table.module.css";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchBookingsData } from "../redux/slices/bookingsSlice";
-import getFriendlyDate from "../functions/friendlyDate";
-import Link from "next/link";
+// Import necessary modules and hooks
+import styles from "./componentStyles/table.module.css"; // Import CSS module for styling
+import { useEffect, useState } from "react"; // Import useEffect and useState hooks from React
+import { useDispatch, useSelector } from "react-redux"; // Import hooks from react-redux
+import { fetchBookingsData } from "../redux/slices/bookingsSlice"; // Import the fetchBookingsData action
+import getFriendlyDate from "../functions/friendlyDate"; // Import function to format date
+import Link from "next/link"; // Import Link from next/link for client-side navigation
 
-
-
-
-
+// Table component
 export default function Table() {
-  const bookings = useSelector((state) => state.bookings);
-  const dispatch = useDispatch();
-  const [showModal, setShowModal] = useState(false);
+  const bookings = useSelector((state) => state.bookings); // Select bookings from the Redux store
+  const dispatch = useDispatch(); // Use dispatch to send actions to the Redux store
+  const [showModal, setShowModal] = useState(false); // Local state to manage modal visibility
 
-
-
+  // Fetch bookings data on component mount
   useEffect(() => {
-    dispatch(fetchBookingsData());
-  }, [dispatch])
-  
-  console.log("bookings", bookings);
+    dispatch(fetchBookingsData()); // Dispatch the action to fetch bookings data
+  }, [dispatch]); // Dependency array includes dispatch to ensure it runs only once
+
+  console.log("bookings", bookings); // Log bookings to console for debugging
 
   return (
     <table className={styles.table}>
@@ -43,7 +40,6 @@ export default function Table() {
             </tr>
           </Link>
         ))}
-         
       </tbody>
     </table>
   );
