@@ -11,7 +11,7 @@ export default function Table() {
   const bookings = useSelector((state) => state.bookings); // Select bookings from the Redux store
   const dispatch = useDispatch(); // Use dispatch to send actions to the Redux store
   const [showModal, setShowModal] = useState(false); // Local state to manage modal visibility
-
+  
   // Fetch bookings data on component mount
   useEffect(() => {
     dispatch(fetchBookingsData()); // Dispatch the action to fetch bookings data
@@ -30,7 +30,7 @@ export default function Table() {
       </thead>
       <tbody>
         {bookings.bookingsList.map((booking) => (
-          <Link className={styles.link} href="/modal" key={booking.bookings_id}>
+          <Link className={styles.link} href={`/pages/opd/${booking.bookings_id}`} key={booking.bookings_id}>
             <tr className={styles.clickableRow}>
               <td>{booking.patient_id}</td>
               <td>

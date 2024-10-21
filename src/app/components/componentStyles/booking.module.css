@@ -78,4 +78,12 @@
     height: 20%;
     border-radius: 15px;
   }
+
+  .submit:hover {
+    background-color: #077a0f;
+  }
+
+  .submit:active {
+    background-color: #06660d;
+  }
   

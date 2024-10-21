@@ -41,40 +41,40 @@ const SearchComponent = (props) => {
 
   return (
     <div className={styles.card}>
-      <div className={styles.inputCard}>
+    <div className={styles.inputCard}>
         <input
-          className={styles.input}
-          type="text"
-          placeholder={props.placeholder}
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+            className={styles.input}
+            type="text"
+            placeholder={props.placeholder}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
         />
         {/* Search button */}
-        <button onClick={handleSearch}>Search</button>
-      </div>
-      {/* Input field for search */}
-
-      {/* Display search results or message */}
-      <div className={styles.displaySearch}>
-        {searchPatientsList.length > 0 ? (
-          <ul>
-            {searchPatientsList.map((patient) => (
-              <li
-                key={patient.patient_ID}
-                dangerouslySetInnerHTML={{
-                  __html: highlightSearchTerm(
-                    `${patient.patient_ID} ${patient.first_name} ${patient.last_name} ${patient.telephone}`,
-                    searchTerm
-                  ),
-                }}
-              />
-            ))}
-          </ul>
-        ) : (
-          <p></p>
-        )}
-      </div>
+        {/*<button onClick={handleSearch}>Search</button>*/}
     </div>
+    {/* Input field for search */}
+    {/* Display search results or message */}
+    <div className={styles.displaySearch}>
+        {searchPatientsList.length > 0 ? (
+            <ul>
+                {searchPatientsList.map((patient) => (
+                    <li
+                        key={patient.patient_ID}
+                        dangerouslySetInnerHTML={{
+                            __html: highlightSearchTerm(
+                                `${patient.patient_ID} ${patient.first_name} ${patient.last_name} ${patient.telephone}`,
+                                searchTerm
+                            ),
+                        }}
+                    />
+                ))}
+            </ul>
+        ) : (
+            <p></p>
+        )}
+    </div>
+</div>
+
   );
 };
 
