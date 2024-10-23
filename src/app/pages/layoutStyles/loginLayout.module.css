@@ -1,0 +1,86 @@
+.main {
+  background-color: rgba(115, 195, 241, 0.31);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 90%;
+  height: 90%;
+  border-radius: 15px;
+}
+
+.header {
+  width: 100%;
+  height: 10%;
+  display: flex;
+}
+
+.logoContainer {
+  width: 20%;
+  height: 100%;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.titleContainer {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: aliceblue;
+  font-weight: bolder;
+  font-size: 5rem;
+  width: 100%;
+  padding-left: 20%;
+  text-shadow: 2px 2px black;
+}
+
+.body {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginContainer {
+  width: 40%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  width: 70%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.415);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.formTitle {
+  width: 100%;
+  height: 10%;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  text-shadow: 2px 2px 2px black;
+  text-align: center;
+}

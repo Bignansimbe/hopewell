@@ -1,0 +1,90 @@
+.loginForm {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  
+}
+
+.inputs {
+  width: 90%;
+  height: 20%;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  padding-left: 10px;
+}
+
+.showPassword {
+  width: 90%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+}
+
+.pledge {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.checkbox {
+  /* Remove default styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  margin-left: 12px;
+  background-color: #089d12;
+}
+
+/* Add checkmark using ::after pseudo-element */
+.checkbox:checked::after {
+  content: "✔";
+  position: absolute;
+  top: -17px; /* Adjust as necessary */
+  left: -1px; /* Adjust as necessary */
+  font-size: 30px; /* Adjust size as necessary */
+  color: #000000;
+}
+
+.submit {
+  border: none;
+  background-color: #166ec7;
+  color: white;
+  width: 90%;
+  height: 10%;
+  border-radius: 15px;
+  font-size: 1rem;
+}
+
+.submit:hover {
+  background-color: #3375b6;
+}
+
+.submit:active {
+  background-color: #1d456d;
+}

@@ -1,0 +1,128 @@
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgb(219, 238, 255);
+}
+
+.left {
+  width: 20%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  overflow: hidden;
+}
+
+.logoBox {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+    width: 80%;
+    height: 90%;
+    margin-bottom: 10%;
+}
+
+.menuBox {
+  width: 100%;
+  height: 85%;
+}
+
+.menuList {
+  width: 100%;
+  height: 60%;
+  padding-top: 5%;
+}
+
+.names {
+  list-style-type: none;
+  padding: 0;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.names li {
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 95%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  border-radius: 10px 0px 0px 10px;
+  color: rgb(12, 115, 206);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Active menu list */
+.names li.active {
+  background-color: rgb(219, 238, 255);
+  border-left: 5px solid rgb(27, 146, 251);
+  color: rgb(4, 136, 252);
+}
+
+.names li:hover {
+    background-color: rgba(178, 216, 249, 0.221);
+}
+
+.right {
+  width: 80%;
+  height: 100%;
+}
+
+.containers {
+  flex-grow: 1;
+  height: 100%;
+}
+
+/* Dashboard Container */
+.container:nth-child(1) {                    
+  padding: 10px;  
+  height: 100%;
+}
+
+/* Lab Request Container */
+.container:nth-child(2) {
+  padding: 10px;
+  height: 100%;
+}
+/* Lab Results container */
+.container:nth-child(3) {
+  padding: 10px;
+  height: 100%;
+}
+
+/* Sent Results */
+.container:nth-child(4) {
+  padding: 10px;
+  height: 100%;
+}
+
+/* sign Out container */
+.container:nth-child(5) {
+  padding: 10px;
+  height: 100%;
+}

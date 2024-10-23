@@ -1,0 +1,117 @@
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.navBar {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.notificationBox {
+  width: 20%;
+  height: 70%;
+  background-color: rgb(255, 255, 255);
+}
+
+.dashBar {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleContainer {
+  width: 90%;
+  height: 30%;
+}
+
+.statContainer {
+  width: 90%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2%;
+  align-items: center;
+}
+
+.titleBox {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.statBox1,
+.statBox2,
+.statBox3 {
+  width: 32%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 3px rgba(194, 194, 194, 0.626);
+  border-radius: 5px;
+  border: none;
+}
+
+.resultContainer {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+}
+
+.resultBox1,
+.resultBox2 {
+  width: 49%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.resultBox1 {
+  justify-content: flex-end;
+}
+
+.resultBox2 {
+  justify-content: flex-start;
+}
+
+.resultBox1Box,
+.resultBox2Box {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.resultBox1BoxNav,
+.resultBox2BoxNav {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.resultBox2BoxBody,
+.resultBox1BoxBody {
+  width: 100%;
+  height: 80%;
+  background-color: white;
+  box-shadow: 0px 0px 3px rgba(194, 194, 194, 0.626);
+  border-radius: 5px;
+}
