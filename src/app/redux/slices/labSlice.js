@@ -3,49 +3,49 @@ import axios from 'axios'; // Import Axios for making HTTP requests
 
 // Define the async thunk for fetching lab request data
 export const fetchLabRequests = createAsyncThunk('labRequests/fetchLabRequests', async () => {
-  const response = await axios.get('http://localhost:3000/lab/lab_requests/get-lab-requests'); // Fetch data from the API
+  const response = await axios.get('https://hms-backend-gold.vercel.app/lab/lab_requests/get-lab-requests'); // Fetch data from the API
   return response.data; // Return the data from the response
 });
 
 // Define the async thunk for posting new lab request data
 export const addLabRequest = createAsyncThunk('labRequests/addLabRequest', async (newRequest) => {
-  const response = await axios.post('http://localhost:3000/lab/lab_requests/add-lab-request', newRequest); // Post data to the API
+  const response = await axios.post('https://hms-backend-gold.vercel.app/lab/lab_requests/add-lab-request', newRequest); // Post data to the API
   return response.data; // Return the data from the response
 });
 
 // Define the async thunk for updating existing lab request data
 export const updateLabRequest = createAsyncThunk('labRequests/updateLabRequest', async (updatedRequest) => {
-  const response = await axios.put(`http://localhost:3000/lab/lab_requests/update-lab-request/${updatedRequest.request_id}`, updatedRequest); // Update data in the API
+  const response = await axios.put(`https://hms-backend-gold.vercel.app/lab/lab_requests/update-lab-request/${updatedRequest.request_id}`, updatedRequest); // Update data in the API
   return response.data; // Return the data from the response
 });
 
 // Define the async thunk for deleting lab request data
 export const deleteLabRequest = createAsyncThunk('labRequests/deleteLabRequest', async (request_id) => {
-  await axios.delete(`http://localhost:3000/lab/lab_requests/delete-lab-request/${request_id}`); // Delete data from the API
+  await axios.delete(`https://hms-backend-gold.vercel.app/lab/lab_requests/delete-lab-request/${request_id}`); // Delete data from the API
   return request_id; // Return the deleted request ID
 });
 
 // Define the async thunk for fetching lab result data
 export const fetchLabResults = createAsyncThunk('labResults/fetchLabResults', async () => {
-  const response = await axios.get('http://localhost:3000/lab/lab_results'); // Fetch data from the API
+  const response = await axios.get('https://hms-backend-gold.vercel.app/lab/lab_results'); // Fetch data from the API
   return response.data; // Return the data from the response
 });
 
 // Define the async thunk for posting new lab result data
 export const addLabResult = createAsyncThunk('labResults/addLabResult', async (newResult) => {
-  const response = await axios.post('http://localhost:3000/lab/lab_results/add_lab_results', newResult); // Post data to the API
+  const response = await axios.post('https://hms-backend-gold.vercel.app/lab/lab_results/add_lab_results', newResult); // Post data to the API
   return response.data; // Return the data from the response
 });
 
 // Define the async thunk for updating existing lab result data
 export const updateLabResult = createAsyncThunk('labResults/updateLabResult', async (updatedResult) => {
-  const response = await axios.put(`http://localhost:3000/lab/lab_results/update_lab_results/${updatedResult.result_id}`, updatedResult); // Update data in the API
+  const response = await axios.put(`https://hms-backend-gold.vercel.app/lab/lab_results/update_lab_results/${updatedResult.result_id}`, updatedResult); // Update data in the API
   return response.data; // Return the data from the response
 });
 
 // Define the async thunk for deleting lab result data
 export const deleteLabResult = createAsyncThunk('labResults/deleteLabResult', async (result_id) => {
-  await axios.delete(`http://localhost:3000/lab/lab_results/delete_lab_results/${result_id}`); // Delete data from the API
+  await axios.delete(`https://hms-backend-gold.vercel.app/lab/lab_results/delete_lab_results/${result_id}`); // Delete data from the API
   return result_id; // Return the deleted result ID
 });
 
