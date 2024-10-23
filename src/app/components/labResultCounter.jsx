@@ -1,5 +1,5 @@
 "use client";
-import styles from "./componentStyles/labRequestCounter.module.css";
+import styles from "./componentStyles/labrequestCounter.module.css";
 import React, { useEffect } from "react"; // Import React and useEffect hook
 import { useDispatch, useSelector } from "react-redux"; // Import hooks from react-redux
 import { fetchLabResults } from "../redux/slices/labSlice"; // Ensure the correct path to the slice
