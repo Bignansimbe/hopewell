@@ -1,0 +1,66 @@
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .card {
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+  .card ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .card ul li {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    height: 20%;
+    width: 95%;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 3px solid #33cc3358;
+    
+  }
+  
+  .time {
+    width: 20%;
+    height: 40%;
+    color: rgb(193, 194, 196);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .patientId {
+    width: 30%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .labDesc {
+    width: 40%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  

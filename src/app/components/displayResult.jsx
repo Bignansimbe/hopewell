@@ -1,5 +1,5 @@
 "use client";
-import styles from "./componentStyles/displayRequest.module.css";
+import styles from "./componentStyles/displayResults.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchLabResults } from "../redux/slices/labSlice"; // Ensure the correct path
 import { useEffect } from "react";
