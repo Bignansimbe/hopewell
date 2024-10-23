@@ -20,7 +20,7 @@ const LoginForm = ({ department }) => { // Accepting department as a prop
 
     try {
       // Sending data to the backend for verification
-      const response = await axios.post("https://hms-backend-gold.vercel.app/verify-password", {
+      const response = await axios.post("https://hms-backend-gold.vercel.app/employees/verify-password", {
         employee_id: ID, // Employee ID
         password: password, // Password
         department: department, // Department
